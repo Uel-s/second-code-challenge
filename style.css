@@ -1,0 +1,41 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    padding: 0;
+}
+
+header{
+    text-align: center;
+    background-color: paleturquoise;
+    padding: 20px;
+}
+
+main{
+    padding: 20px;
+}
+
+h2{
+    color: yellow;
+}
+h3{
+    color: chocolate;
+}
+  
+  #animalcode {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #animalcode {
+    display: block;
+  }
+
+  .animaldetails img{
+       margin: auto;      
+      }
+
+
