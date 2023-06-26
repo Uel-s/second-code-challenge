@@ -1,22 +1,21 @@
-##App for Flatacuties
+## App for Flatacuties
 
 This is a web application that allows users to vote for their favorite animal from a list of adorable animals. Each animal is represented by an image and a name, and users can click on their preferred animal to vote for it. The application fetches the animal names and details from a server and updates the vote count for each animal.
 
-##Demo
 
-To see a live demo of the application, click here.
-
-##Technologies Used
+## Technologies Used
 
 HTML
 CSS
 JavaScript
 Installation
-
+ 
+## Description for clonning.
 Clone the repository: git clone https://github.com/uel57/second-code-challenge.
 Navigate to the project directory: cd your-repo
 Open the index.html file in your web browser.
-Usage
+
+## Usage
 
 Upon opening the application, you will see a header with the title "VOTE FOR YOUR FAVORITE ANIMAL".
 Below the header, there is a list of animal names along with their respective images.
@@ -27,9 +26,9 @@ Code
 
 The code for this application can be found here.
 
-##Author.
+## Author.
 Sam Kariuki
 
-##License
+## License
 
 This project is licensed under the MIT License.
