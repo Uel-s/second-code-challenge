@@ -1,41 +1,46 @@
 
-// The API address
-const animalAddress = "http://localhost:3000";
 
 // Fetch animal names from the server
-function getAnimalNames() {
-    fetch(`${animalAddress}/characters`)
+function getAnimalNames(animals) {
+    fetch(" http://localhost:3000/characters")
         .then(response => response.json())
-        .then(data => {
+        .then(animals => { 
+            animals.forEach((animal)=> {
             const animalCode = document.getElementById("animalcode");
-            animalCode.innerHTML = ""; // Clear the existing list
+            //animalCode.innerHTML = `<li class="animaldetails"></li>`; // Clear the existing list
+            const li = document.createElement("li")
+            animalCode.appendChild(li)
+            const a = document.createElement("a")
+            a.href=`http://localhost:3000/characters/${animal.id}`
+            li.appendChild(a)
+            a.textContent=`${animal.name}`
+            a.addEventListener("click", (e)=>{
+              e.preventDefault()
+              const image = document.querySelector("#animalcode img");
+              image.src = animal.image;
+              image.alt = animal.name;
 
-            data.characters.forEach(animal => {
-                const animalItem = document.createElement("li");
-                animalItem.className = "animaldetails";
+              const name = document.createElement("h4");
+              name.textContent = animal.name;
+              animalCode.appendChild(image)
+               
+              const p = document.querySelector("#animalcode p");
+              p.textContent = `votes: ${animal.votes}`
+              animalCode.appendChild(p)
 
-                const image = document.createElement("img");
-                image.src = animal.image;
-                image.alt = animal.name;
+        
+              
 
-                const name = document.createElement("h4");
-                name.textContent = animal.name;
 
-                animalItem.appendChild(image);
-                animalItem.appendChild(name);
+            })
 
-                animalCode.appendChild(animalItem);
-
-                // Add click event listener to vote for an animal
-                animalItem.addEventListener("click", () => {
-                    voteForAnimal(animal.id);
-                });
-            });
-        })
-        .catch(error => {
-            console.error("Error getting animal names:", error);
-        });
+        })})
 }
+
+
+            // function animalVote (){
+                //  getAnimalNames()}
+            
 
 // Vote for an animal by sending a request to the server
 function voteForAnimal(animalId) {
