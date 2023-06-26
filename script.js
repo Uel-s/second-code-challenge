@@ -1,76 +1,55 @@
-
-
 // Fetch animal names from the server
 function getAnimalNames(animals) {
     fetch(" http://localhost:3000/characters")
         .then(response => response.json())
         .then(animals => { 
-            animals.forEach((animal)=> {
+            animals.forEach((animal)=> {    
             const animalCode = document.getElementById("animalcode");
-            //animalCode.innerHTML = `<li class="animaldetails"></li>`; // Clear the existing list
             const li = document.createElement("li")
             animalCode.appendChild(li)
             const a = document.createElement("a")
-            a.href=`http://localhost:3000/characters/${animal.id}`
+            a.href=`http://localhost:3000/characters/${animal.id}`      //linking with local server
             li.appendChild(a)
             a.textContent=`${animal.name}`
             a.addEventListener("click", (e)=>{
               e.preventDefault()
+
+                //selecting the image in id 
+
               const image = document.querySelector("#animalcode img");
               image.src = animal.image;
               image.alt = animal.name;
+   
+              //creating an element h4 and appending to animalcode
 
               const name = document.createElement("h4");
               name.textContent = animal.name;
               animalCode.appendChild(image)
                
-              const p = document.querySelector("#animalcode p");
+             //the vote button for the number of votes   
+
+              const p = document.querySelector("#animalcode p");    
+              const votesButton= document.createElement("button")
+              votesButton.textContent="Add Votes"
+              votesButton.addEventListener("click", function(e){
+                animal.votes++ 
+                p.textContent = `votes: ${animal.votes}`
+
+              })
+              animalCode.appendChild(votesButton)  
               p.textContent = `votes: ${animal.votes}`
               animalCode.appendChild(p)
-
-        
-              
-
 
             })
 
         })})
+          
+        //await for my code before sending to web
+
+         document.addEventListener('DOMContentLoaded', init); 
 }
 
-
-            // function animalVote (){
-                //  getAnimalNames()}
-            
-
-// Vote for an animal by sending a request to the server
-function voteForAnimal(animalId) {
-    fetch(`${animalAddress}/characters/${animalId}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ vote: true })
-    })
-        .then(response => response.json())
-        .then(data => {
-            // Update the vote count for the animal
-            const animalItem = document.querySelector(`li.animaldetails img[alt="${data.name}"]`).parentNode;
-            const voteCount = document.createElement("p");
-            voteCount.textContent = `Votes: ${data.votes}`;
-            animalItem.appendChild(voteCount);
-        })
-        .catch(error => {
-            console.error("Error voting for animal:", error);
-        });
-}
-
-// Initialize the app
-function init() {
-    getAnimalNames();
-}
-
-// Invoke the app initialization
-init();
+getAnimalNames() // callback
 
 
 
