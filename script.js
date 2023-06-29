@@ -8,9 +8,9 @@ function getAnimalNames(animals) {
             const li = document.createElement("li")
             animalCode.appendChild(li)
             const a = document.createElement("a")
-            a.href=`http://localhost:3000/characters/${animal.id}`      //linking with local server
-            li.appendChild(a)
-            a.textContent=`${animal.name}`
+            a.href=`http://localhost:3000/characters`      //linking with local server 
+            li.appendChild(a) 
+            a.textContent=`${animal.name},${animal.id}`
             a.addEventListener("click", (e)=>{
               e.preventDefault()
 
@@ -19,26 +19,30 @@ function getAnimalNames(animals) {
               const image = document.querySelector("#animalcode img");
               image.src = animal.image;
               image.alt = animal.name;
+              animalCode.appendChild(image)
    
               //creating an element h4 and appending to animalcode
 
-              const name = document.createElement("h4");
-              name.textContent = animal.name;
-              animalCode.appendChild(image)
+              const header = document.createElement("h4");
+              header.textContent = animal.name;
+
+
+              
                
              //the vote button for the number of votes   
 
-              const p = document.querySelector("#animalcode p");    
+              const paragraph = document.querySelector("#animalcode p");    
               const votesButton= document.createElement("button")
               votesButton.textContent="Add Votes"
-              votesButton.addEventListener("click", function(e){
-                animal.votes++ 
-                p.textContent = `votes: ${animal.votes}`
+              votesButton.addEventListener("click", ()=> {
+    
+                 animal.votes++ 
+                paragraph.textContent = `votes: ${animal.votes}`
 
               })
               animalCode.appendChild(votesButton)  
-              p.textContent = `votes: ${animal.votes}`
-              animalCode.appendChild(p)
+  
+              animalCode.appendChild(paragraph)
 
             })
 
@@ -46,10 +50,11 @@ function getAnimalNames(animals) {
           
         //await for my code before sending to web
 
-         document.addEventListener('DOMContentLoaded', init); 
-}
+        document.addEventListener('DOMContentLoaded', sam); 
+      }
 
 getAnimalNames() // callback
+
 
 
 
