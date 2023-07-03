@@ -50,6 +50,8 @@ _open the `index.html` file in web browser._
 
 
 
+
+
 When you open the web page, you will see a heading that says "VOTE FOR YOUR FAVORITE ANIMAL" and a list of animal names.
 
 Each animal name is a link.
