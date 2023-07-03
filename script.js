@@ -1,4 +1,7 @@
 // Fetch animal names from the server
+
+const votesButton= document.createElement("button")
+
 function getAnimalNames(animals) {
     fetch(" http://localhost:3000/characters")
         .then(response => response.json())
@@ -32,7 +35,6 @@ function getAnimalNames(animals) {
              //the vote button for the number of votes   
 
               const paragraph = document.querySelector("#animalcode p");    
-              const votesButton= document.createElement("button")
               votesButton.textContent="Add Votes"
               votesButton.addEventListener("click", ()=> {
     
