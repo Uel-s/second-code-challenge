@@ -24,19 +24,21 @@ script.js: The JavaScript code in this file handles the dynamic behavior of the 
 assets/: This directory contains the GIF images used for the animals.
 Getting Started
 
-## Installation, follow these steps:
+## Installation, follow these steps
 
-git clone the repository to your local machine using the command
 
-$ "git clone" https://github.com/uel57/second-code-challenge
 
-Head over to the project using the command cd
+_git clone the repository to your local machine using the command_
 
-$ "cd second-code-challenge
+>[$ "git clone"]  (https://github.com/uel57/second-code-challenge)
 
-Run the code using command code,on your terminal
+_Head over to the project using the command cd_
 
-$ code.
+>$ "cd second-code-challenge
+
+_Run the code using command code,on your terminal_
+
+>$ code.
 
 
 When you open the web page, you will see a heading that says "VOTE FOR YOUR FAVORITE ANIMAL" and a list of animal names.
