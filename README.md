@@ -1,8 +1,8 @@
-## App for Flatacuties
+# App for Flatacuties
 
 This is a web application that allows you to vote for your favorite animal from a list of cute animals. The app displays the names and pictures of the animals, and you can add votes to support your preferred animal.
 
-## Features
+# Features
 
 Displaying animal names and pictures
 Adding votes for animals
@@ -28,11 +28,24 @@ Getting Started
 
 git clone the repository to your local machine using the command
 
-$ "git clone" https://github.com/uel57/second-code-challenge
+>[$ "git clone"] (https://github.com/uel57/second-code-challenge)
 
-Head over to the project using the command cd
+-Head over to the project using the command cd_
 
-$ "cd second-code-challenge
+>$ cd second-code-challenge
+
+_one the terminal run the command:_
+
+>$ code
+
+_in the terminal run of code run_
+
+>$ json-server --watch db.json
+
+_open the `index.html` file in web browser._
+
+
+
 
 
 
